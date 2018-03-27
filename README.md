@@ -13,7 +13,17 @@ I added 3 font:
 
 **ONLY OrangePI!**</br>
 required swap the CS TFT and CS touchscreen on-board witch cut wire.</br>
-	
+Before you should make sure	that OrangePi enabled SPI,
+edited /boot/armbianEnv.txt to add:
+<pre><code>
+overlay_prefix=sun8i-h3
+overlays=spi-spidev
+param_spidev_spi_bus=0
+param_spidev_max_freq=7000000
+</code></pre>
+
+rebooted and found /dev/spidev0.0
+
 after
 
 <pre><code>cd ~ 
